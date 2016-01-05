@@ -1,0 +1,56 @@
+#include <stdio.h>
+int main () {
+    int a[100][100], b[100][100], c[100][100];
+    int ra, ca, rb, cb, i, j;
+    printf ("Enter Row size of Matrix#1: "); scanf (" %d", &ra);
+    printf ("Enter Row size of Matrix#1: "); scanf (" %d", &ca);
+    printf ("Enter Row size of Matrix#2: "); scanf (" %d", &rb);
+    printf ("Enter Row size of Matrix#2: "); scanf (" %d", &cb);
+    printf ("Enter %d elements of Matrix#1: ", ra*ca);
+    for (i = 0; i < ra; i++)
+        for (j = 0; j < ca; j++) scanf (" %d", &a[i][j]);
+    printf ("Enter %d elements of Matrix#2: ", rb*cb);
+    for (i = 0; i < rb; i++)
+        for (j = 0; j < cb; j++) scanf (" %d", &b[i][j]);
+    printf ("Adding Matrix#1 & Matrix#2..\n");
+    if (ra == rb && ca == cb)
+        for (i = 0; i < rb; i++) {
+            for (j = 0; j < cb; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+                printf ("%d\t", c[i][j]);
+            }
+            printf ("\n");
+        }
+    else printf ("Matrix#1 + Matrix#2 cant be possible\n");
+    printf ("\n");
+
+    printf ("Substructing Matrix#1 & Matrix#2..\n");
+    if (ra == rb && ca == cb)
+        for (i = 0; i < rb; i++) {
+            for (j = 0; j < cb; j++) {
+                c[i][j] = a[i][j] - b[i][j];
+                printf ("%d\t", c[i][j]);
+            }
+            printf ("\n");
+        }
+    else printf ("Matrix#1 - Matrix#2 cant be possible\n");
+    printf ("\n");
+
+    printf ("Transpose of Matrix#1: \n");
+    if (ra == rb && ca == cb) {
+        for (i = 0; i < rb; i++) {
+            for (j = 0; j < cb; j++) {
+                c[j][i] = a[i][j];
+            }
+        }
+        for (i = 0; i < rb; i++) {
+            for (j = 0; j < cb; j++) {
+                printf ("%d\t", c[i][j]);
+            }
+            printf ("\n");
+        }
+    }
+    else printf ("Transpose of Matrix#1 cant be possible\n");
+    printf ("\n");
+    return 0;
+}
