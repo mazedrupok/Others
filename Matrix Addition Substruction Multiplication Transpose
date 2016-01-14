@@ -52,5 +52,23 @@ int main () {
     }
     else printf ("Transpose of Matrix#1 cant be possible\n");
     printf ("\n");
+    printf ("Multiflication of Matrix#1 & Matrix#2: \n");
+    if (ra == cb) {
+        for (int i = 0; i < 2; i++) {
+         for (int j = 0; j < 2; j++) {
+            int sum = 0;
+            for (int k = 0; k < 2; k++)
+               sum += a[i][k] * b[k][j];
+            c[i][j] = sum;
+         }
+      }
+      for (int i = 0; i < 2; i++) {
+         for (int j = 0; j < 2; j++) {
+            cout << c[i][j] << " ";
+         }
+         cout << endl;
+      }
+    }
+    else printf ("Multiflication cant be possible\n");
     return 0;
 }
